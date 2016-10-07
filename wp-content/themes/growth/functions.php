@@ -44,7 +44,7 @@ function growth_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'growth' ),
+		'header' => esc_html__( 'Topo', 'growth' ),
 	) );
 
 	/*
@@ -89,11 +89,29 @@ function growth_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'growth' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'growth' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'description'   => esc_html__( 'Adicione Widgets aqui', 'growth' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Rodapé', 'growth' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Administre o conteúdo do rodapé aqui', 'growth' ),
+		'before_widget' => '<div class="footer-widget-%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="footer-widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Instagram', 'growth' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Adicione o widget do instagram aqui', 'growth' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h4 class="footer-widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'growth_widgets_init' );
@@ -138,3 +156,49 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Register "Complementos" custom post type
+ */
+add_action("init", "register_complementos_post_type");
+function register_complementos_post_type() {
+	
+	$labels	= array( "name" => "Complementos", "singular_name" => "Complemento" );
+	$args	= array(
+		
+		"labels"	=> $labels,
+		"menu_icon"	=> "dashicons-plus",
+		"public"	=> true,
+		"publicly_queryable"	=> true,
+		"show_ui"	=> true,
+		"query_var"	=> true,
+		"rewrite"	=> true,
+		"capability_type"	=> "post",
+		"hierarchical"	=> false,
+		"menu_position"	=> 20,
+		"supports" => array( "title", "editor", "thumbnail" ),
+			
+	);
+	register_post_type("complementos", $args);
+}
+
+/**
+ * Register "Categoria" custom taxonomy for "Complementos" custom post type
+ */
+add_action("init", "register_categoria_custom_taxonomy");
+function register_categoria_custom_taxonomy() {
+	
+	$labels = array( "name"	=> "Categorias", "singular_name"	=> "Categoria" );
+	$args = array(
+		
+		"hierarchical"	=> true,
+		"labels" => $labels,
+		"show_ui" => true,
+		"show_admin_column" => true,
+		"query_var" => true,
+		"rewirte" => array("slug" => "categoria"),
+		
+	);
+	
+	register_taxonomy("categoria", "complementos", $args);
+}

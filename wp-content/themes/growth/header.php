@@ -16,6 +16,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
 <!-- Favicons -->
 <link rel="icon" href="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/favicon_16.png" size="16x16">
 <link rel="icon" href="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/favicon_32.png" size="32x32">
@@ -37,4 +39,32 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="site">
+		<header id="header">
+			<div class="container">
+				<div class="top-header clearfix">
+					<div class="logo-box">
+						<a href="<?php echo esc_html(home_url("/")); ?>" title="Growth Blog"><img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/growth-blog-logo.svg" alt="Growth Blog"></a>
+					</div>
+					<div class="search-box">
+						<?php get_search_form(); ?>
+					</div>
+				</div>
+			</div>
+			<nav id="main-nav">
+				<div class="container">
+					<?php
+            $header_menu_args = array(
+              "theme_location"	=> "header",
+              "container"				=> "ul",
+              "menu_class"			=> "nav-links"
+            );
+            wp_nav_menu($header_menu_args);
+          ?>
+				</div>
+			</nav>
+			<div class="mobile-btn">
+				<i class="ion-ios-arrow-down"></i>
+				<div class="transition-mobile"></div>
+			</div>
+		</header>
 	

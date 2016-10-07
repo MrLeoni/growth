@@ -411,10 +411,10 @@ object {
 9.1 Setup
 --------------------------*/
 body {
-  font-family: sans-serif ;
+  font-family: "Source Sans Pro", sans-serif ;
   font-size: 14px;
   font-weight: 400;
-  background-color: #ffffff;
+  background-color: #ccc;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -446,18 +446,410 @@ ul {
 	list-style: none;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 /* Classes */
 
 .row {
   padding: 0;
 }
 
+.widget-title {
+	color: #fff;
+}
+
+.basic-fallback {
+	color: #c20a32;
+	text-align: center;
+	padding: 20px 10px;
+}
+
 /*--------------------------
 9.2 Header
 --------------------------*/
+
+#header {
+	background-color: #fff;
+	padding: 25px 0 0;
+}
+
+.top-header {
+	margin: 0 0 25px;
+}
+
+.logo-box {
+	display: inline-block;
+	width: 240px;
+	height: auto;
+	margin: 0;
+}
+
+.logo-box a,
+.logo-box img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.search-box {
+	float: right;
+	display: block;
+	width: auto;
+	height: auto;
+	margin: 0;
+	position: relative;
+	top: 15px;
+}
+
+.search-input,
+.search-btn {
+	background-color: #fff;	
+	color: #000;
+	border: 1px solid #000;
+	display: block;
+	float: left;
+	padding: 5px;
+}
+
+.search-input {
+	width: 80%;
+	border-right: 0;
+}
+
+.search-btn {
+	width: 20%;
+	text-align: center;
+	position: relative;
+	z-index: 9;
+	background-color: transparent;
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+	overflow: hidden;
+}
+
+.search-btn:before {
+	content: " ";
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: -9;
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	right: -100%;
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+}
+
+.search-btn:hover {
+	color: #fff;
+}
+
+.search-btn:hover:before {
+	right: 0;
+}
+
+/* Main Nav */
+
+.mobile-btn {
+	display: none;
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+	font-size: 2em;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+}
+
+.mobile-btn:hover,
+.mobile-btn.mobile-active{
+	color: #000;
+	background-color: #e20330;
+	cursor: pointer;
+}
+
+#main-nav {
+	background-color: #000;
+	margin: 0;
+	display: block;
+}
+
+.nav-links {
+	display: block;
+	text-align: center;
+}
+
+.nav-links li {
+	display: inline-block;
+	margin-right: 7%;
+}
+
+.nav-links li:last-child {
+	margin-right: 0;
+}
+
+.nav-links li a:link,
+.nav-links li a:visited {
+	display: inline-block;
+	padding: 10px;
+	background-color: #000;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.nav-links li a:hover,
+.nav-links li a:active {
+	color: #000;
+	background-color: #e20330;
+}
+
+@media (max-width: 460px) {
+	
+	.mobile-btn {
+		display: block;
+	}
+	
+	#main-nav {
+		display: none;
+	}
+	
+	.logo-box {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	.search-box {
+		float: none;
+		width: 240px;
+		margin: 20px auto 0;
+		top: 0;
+	}
+	
+	.nav-links li {
+		display: block;
+		margin: 0 0 10px;
+	}
+	
+}
+
+/*--------------------------
+9.3 Footer
+--------------------------*/
+
+#footer {
+	background-color: #222;
+}
+
+/* Instagram */
+
+.insta-box {
+	position: relative;
+	display: block;
+	background-color: #fff;
+}
+
+#sbi_load {
+	padding-top: 0!important;
+}
+
+.sbi_photo {
+	filter: grayscale(100%);
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+	opacity: 1!important;
+}
+
+.sbi_photo:hover {
+	filter: none
+}
+
+.insta-btn img {
+	margin: 0 10px 0 0;
+}
+
+.insta-btn:link,
+.insta-btn:visited {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 10px 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+	box-shadow: none;
+}
+
+.insta-btn:hover,
+.insta-btn:visited {
+	box-shadow: 5px 5px 0px #000;
+}
+
+/* Footer */
+
+#footer .widget-title {
+	margin: 0 0 30px;
+	padding: 40px 0 0;
+}
+
+.footer-about {
+	color: #fff;
+}
+
+.footer-about img {
+	display: block;
+	width: 160px;
+	height: auto;
+	margin: 0 0 20px;
+}
+
+.footer-about a:link,
+.footer-about a:visited {
+	color: #fff;
+	font-size: 1.3em;
+	margin-right: 20px;
+}
+
+.footer-about a:hover,
+.footer-about a:active {
+	color: #c20a32;
+}
+
+.footer-widget-text-2 {
+	margin: 0 0 20px;
+}
+
+/* Posts */
+
+.footer-post-box {
+	box-sizing: content-box;
+	color: #fff;
+	margin: 0;
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+.footer-post-box,
+.footer-post-box .col-xs-4,
+.footer-post-box .col-xs-8 {
+	height: 90px;
+	overflow: hidden;
+	position: relative;
+}
+
+.footer-post-box img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.footer-post-box .footer-content {
+	height: 50px;
+}
+
+.footer-title a:link,
+.footer-title a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer-title a:hover,
+.footer-title a:active {
+	color: #c20a32;
+}
+
+.footer-post-box .entry-meta {
+	color: #767676;
+	margin: 15px 0 0;
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 100%;
+}
+
+.entry-meta p {
+	display: inline-block;
+}
+
+.entry-meta p:first-child {
+	margin-right: 10%;
+}
+
+.entry-meta i {
+	font-size: 1em;
+	margin: 0 5px 0 0;
+}
+
+/* Copy */
+
+.copy {
+	padding: 10px 0;
+	background-color: #000;
+	margin: 30px auto 0;
+	text-align: left;
+	color: #fff;
+}
+
+.delucca {
+	float: right;
+	display: block;
+	margin: 0;
+}
+
+.delucca a:link,
+.delucca a:visited {
+	background: url(assets/images/logo/delucca-logo.png) no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	display: block;
+	width: 85px;
+	height: 12px;
+	margin: 0 auto 0;
+	text-indent: -99999px;
+	position: relative;
+	top: 5px;
+}
+
+.delucca a:hover,
+.delucca a:active {
+	background-position: center top
+}
+
+@media (max-width: 768px) {
+	
+	.footer-post-box {
+		margin: 0 0 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #333;
+	}
+	
+}
+
+@media (max-width: 500px) {
+	.insta-box {
+		display: none;
+	}
+}
+
+@media (max-width: 460px) {
+	
+	.copy {
+		text-align: center;
+	}
+	
+	.delucca {
+		float: none;
+	}
+	
+	.delucca a:link,
+	.delucca a:visited {
+		margin: 15px auto 0;
+		top: 0;
+	}
+	
+}
