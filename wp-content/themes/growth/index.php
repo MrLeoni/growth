@@ -19,7 +19,7 @@ get_header(); ?>
 			<section id="blog">
 				<div class="container">
 					<?php
-						if ( !have_posts() ) :
+						if ( have_posts() ) :
 							// get_template_part( "template-parts/content", "destaques"); ?>
 							<div class="row">
 								<div class="col-md-9">
@@ -73,7 +73,7 @@ get_header(); ?>
 									// End of the Loop
 									endwhile;
 									?>
-									</div><!-- row2 -->
+									</div><!-- .row -->
 									<div class="pagination-box">
 										<?php
 										echo paginate_links(array(
@@ -81,18 +81,18 @@ get_header(); ?>
 											"next_text"			=> "Próxima Página"
 											)); ?>
 									</div>
-								</div><!-- col-9 -->
+								</div><!-- .col-9 -->
 								<div class="col-md-3 hidden-sm hidden-xs">
 									<?php get_sidebar(); ?>
-								</div><!-- col-3 -->
-							</div><!-- row -->
+								</div><!-- .col-3 -->
+							</div><!-- .row -->
 						<?php 
 						else :
 							get_template_part( 'template-parts/content', 'none' );
 						endif;
 					?>	
-				</div> <!-- container -->
-			</section><!-- blog -->
+				</div> <!-- .container -->
+			</section><!-- .blog -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -1052,6 +1052,102 @@ ul {
 }
 
 /*--------------------------
+9.6 Not Found / 404
+--------------------------*/
+
+.not-found {
+	background-color: #000;
+	color: #c20a32;
+	text-align: center;
+	border-radius: 10px;
+	padding: 5% 0;
+}
+
+.not-found .page-header {
+	border: 0;
+	margin: 0 0 30px;
+}
+
+.not-found .search-box {
+	float: none;
+	display: block;
+	width: 165px;
+	margin: 15px auto 0;
+	top: 0;
+}
+
+.not-found .search-btn {
+	background-color: #fff;
+}
+
+.not-found .search-btn:before {
+	background-color: #c20a32;
+}
+
+.not-found .search-btn:hover {
+	color: #000;
+}
+
+.search-btn:hover:before {
+	right: 0;
+}
+
+.page-title-404 {
+	font-size: 5em;
+}
+
+.error-404 {
+	background-color: #fff;
+	padding: 50px 0 70px;
+}
+
+.error-404 p {
+	color: #fff;
+	margin: 20px 0 0;
+}
+
+.error-404 a:link,
+.error-404 a:visited {
+	color: #c20a32;
+	text-decoration: none;
+}
+
+.error-404 a:hover,
+.error-404 a:active {
+	color: #599bd5;
+}
+
+/*--------------------------
+9.7 Search / Archive
+--------------------------*/
+
+#search-page,
+#archive {
+	background-color: #fff;
+	padding: 0 0 50px;
+}
+
+#search-page .page-header,
+#archive .page-header {
+	background-color: #222;
+	text-align: center;
+	margin: 0 0 50px;
+	padding: 4% 0;
+	color: #c20a32;
+}
+
+#search-page .not-found .page-header,
+#archive .not-found .page-header{
+  border: 0;
+  margin: 0 0 30px;
+  background-color: transparent;
+}
+
+.search-result {
+	color: #599bd5;
+}
+
+/*--------------------------
 9.X Queries
 --------------------------*/
 
