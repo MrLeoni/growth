@@ -22,5 +22,10 @@ $(document).ready(function() {
     }
     
   });
+  
+  /*$(".destaques-slider").bxSlider({
+    minSlides: 2,
+    maxSlides: 3,
+  });*/
 
 });

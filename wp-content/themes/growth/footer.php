@@ -26,7 +26,7 @@
 			<div class="row">
 				<div class="col-sm-4 footer-about">
 					<h4 class="widget-title">Sobre nós</h4>
-					<img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/growth-blog-footer-logo.svg" alt="Growth">
+					<img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/growth-blog-footer-logo.png" alt="Growth">
 					<?php get_sidebar("footer"); ?>
 					<a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					<a href="#" target="_blank" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>

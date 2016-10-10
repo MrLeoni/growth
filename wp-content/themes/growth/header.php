@@ -43,7 +43,7 @@
 			<div class="container">
 				<div class="top-header clearfix">
 					<div class="logo-box">
-						<a href="<?php echo esc_html(home_url("/")); ?>" title="Growth Blog"><img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/growth-blog-logo.svg" alt="Growth Blog"></a>
+						<a href="<?php echo esc_html(home_url("/")); ?>" title="Growth Blog"><img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/growth-blog-logo.png" alt="Growth Blog"></a>
 					</div>
 					<div class="search-box">
 						<?php get_search_form(); ?>
