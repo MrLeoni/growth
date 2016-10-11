@@ -34,6 +34,16 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	8.1 Captions
 	8.2 Galleries
 9.0 Custom CSS
+	9.1 Setup
+	9.2 Header
+	9.3 Footer
+	9.4 Blog Index
+	9.5 Post Destaque
+	9.6 Single Post
+	9.7 Sidebar
+	9.8 Search / Archive
+	9.9 Not Found / 404
+	9.10 Query
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Navigation
@@ -1097,138 +1107,114 @@ ul {
 }
 
 /*--------------------------
-9.5 Sidebar
+9.5 Post Destaques
 --------------------------*/
 
-.sidebar-widget .widget-title,
-.sidebar-post h4 {
-	color: #c20a32;
-	margin: 0 0 20px;
+.destaque-box {
+	margin: 0 0 6%;
 }
 
-.sidebar-custom-widget {
-	margin: 30px 0 0;
+.destaque-item {
+	display: block;
+	float: left;
+	width: 33.333333%;
 }
 
-.sidebar-post {
-	padding: 10px;
-	border: 2px solid #c20a32;
-	margin: 0 0 30px;
+.destaque-item .thumb-overlay {
+	width: 90%;
+	height: 90%;
+	z-index: 999;
 }
 
-.sidebar-banner img,
-.sidebar-banner:link,
-.sidebar-banner:visited,
-.sidebar-banner:hover,
-.sidebar-banner:active {
+.thumb-gradient {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 99;
 	display: block;
 	width: 100%;
-	height: auto;
-	margin: 0 0 30px;
+	background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
 }
 
-.sidebar-banner>img {
+.destaque-item a:link,
+.destaque-item a:visited {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0 0 90%;
+	color: #fff;
+	text-align: center;
+}
+
+.destaque-item a:hover .thumb-gradient {
+	background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.destaque-item a:hover .thumb-overlay {
+	opacity: 1;
+}
+
+.destaque-item a:hover .destaque-info  {
+	bottom: 50px;
+}
+
+.destaque-item img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: 9;
+	display: block;
+	width: auto;
+	height: 100%;
+}
+
+.destaque-info {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 15px;
+	z-index: 9999;
+	-webkit-transform: none;
+	transform: none;
+	-webkit-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+}
+
+.destaque-info .destaque-tag {
+	background-color: #c20a32;
+	padding: 1% 2%;
 	margin: 0;
 }
 
-/*--------------------------
-9.6 Not Found / 404
---------------------------*/
-
-.not-found {
-	background-color: #000;
-	color: #c20a32;
-	text-align: center;
-	border-radius: 10px;
-	padding: 5% 0;
+.destaque-info h3 {
+	margin: 4% 0;
+	font-size: 1.2em;
 }
 
-.not-found .page-header {
-	border: 0;
-	margin: 0 0 30px;
+.destaque-info p {
+	font-size: 0.9em;
+	display: inline-block;
 }
 
-.not-found .search-box {
-	float: none;
-	display: block;
-	width: 165px;
-	margin: 15px auto 0;
-	top: 0;
+.destaque-info p:last-child {
+	margin-left: 10px;
 }
 
-.not-found .search-btn {
-	background-color: #fff;
-}
-
-.not-found .search-btn:before {
-	background-color: #c20a32;
-}
-
-.not-found .search-btn:hover {
-	color: #000;
-}
-
-.search-btn:hover:before {
-	right: 0;
-}
-
-.page-title-404 {
-	font-size: 5em;
-}
-
-.error-404 {
-	background-color: #fff;
-	padding: 50px 0 70px;
-}
-
-.error-404 p {
-	color: #fff;
-	margin: 20px 0 0;
-}
-
-.error-404 a:link,
-.error-404 a:visited {
-	color: #c20a32;
-	text-decoration: none;
-}
-
-.error-404 a:hover,
-.error-404 a:active {
-	color: #599bd5;
+.destaque-info i {
+	margin-right: 5px;
+	display: inline;
 }
 
 /*--------------------------
-9.7 Search / Archive
---------------------------*/
-
-#search-page,
-#archive {
-	background-color: #fff;
-	padding: 0 0 50px;
-}
-
-#search-page .page-header,
-#archive .page-header {
-	background-color: #222;
-	text-align: center;
-	margin: 0 0 50px;
-	padding: 4% 0;
-	color: #c20a32;
-}
-
-#search-page .not-found .page-header,
-#archive .not-found .page-header{
-  border: 0;
-  margin: 0 0 30px;
-  background-color: transparent;
-}
-
-.search-result {
-	color: #599bd5;
-}
-
-/*--------------------------
-9.8 Single Post
+9.6 Single Post
 --------------------------*/
 
 #single-post {
@@ -1398,114 +1384,138 @@ ul {
 }
 
 /*--------------------------
-9.X Post Destaques
+9.7 Sidebar
 --------------------------*/
 
-.destaque-box {
-	margin: 0 0 6%;
+.sidebar-widget .widget-title,
+.sidebar-post h4 {
+	color: #c20a32;
+	margin: 0 0 20px;
 }
 
-.destaque-item {
-	display: block;
-	float: left;
-	width: 33.333333%;
+.sidebar-custom-widget {
+	margin: 30px 0 0;
 }
 
-.destaque-item .thumb-overlay {
-	width: 90%;
-	height: 90%;
-	z-index: 999;
+.sidebar-post {
+	padding: 10px;
+	border: 2px solid #c20a32;
+	margin: 0 0 30px;
 }
 
-.thumb-gradient {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	z-index: 99;
-	display: block;
-	width: 100%;
-	background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
-	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
-	-webkit-transition: 0.3s ease-out;
-	transition: 0.3s ease-out;
-}
-
-.destaque-item a:link,
-.destaque-item a:visited {
-	position: relative;
-	overflow: hidden;
+.sidebar-banner img,
+.sidebar-banner:link,
+.sidebar-banner:visited,
+.sidebar-banner:hover,
+.sidebar-banner:active {
 	display: block;
 	width: 100%;
+	height: auto;
+	margin: 0 0 30px;
+}
+
+.sidebar-banner>img {
 	margin: 0;
-	padding: 0 0 90%;
-	color: #fff;
-	text-align: center;
-}
-
-.destaque-item a:hover .thumb-gradient {
-	background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-}
-
-.destaque-item a:hover .thumb-overlay {
-	opacity: 1;
-}
-
-.destaque-item a:hover .destaque-info  {
-	bottom: 50px;
-}
-
-.destaque-item img {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	z-index: 9;
-	display: block;
-	width: auto;
-	height: 100%;
-}
-
-.destaque-info {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 15px;
-	z-index: 9999;
-	-webkit-transform: none;
-	transform: none;
-	-webkit-transition: 0.3s ease-out;
-	transition: 0.3s ease-out;
-}
-
-.destaque-info .destaque-tag {
-	background-color: #c20a32;
-	padding: 1% 2%;
-	margin: 0;
-}
-
-.destaque-info h3 {
-	margin: 4% 0;
-	font-size: 1.2em;
-}
-
-.destaque-info p {
-	font-size: 0.9em;
-	display: inline-block;
-}
-
-.destaque-info p:last-child {
-	margin-left: 10px;
-}
-
-.destaque-info i {
-	margin-right: 5px;
-	display: inline;
 }
 
 /*--------------------------
-9.X Queries
+9.8 Search / Archive
+--------------------------*/
+
+#search-page,
+#archive {
+	background-color: #fff;
+	padding: 0 0 50px;
+}
+
+#search-page .page-header,
+#archive .page-header {
+	background-color: #222;
+	text-align: center;
+	margin: 0 0 50px;
+	padding: 4% 0;
+	color: #c20a32;
+}
+
+#search-page .not-found .page-header,
+#archive .not-found .page-header{
+  border: 0;
+  margin: 0 0 30px;
+  background-color: transparent;
+}
+
+.search-result {
+	color: #599bd5;
+}
+
+/*--------------------------
+9.9 Not Found / 404
+--------------------------*/
+
+.not-found {
+	background-color: #000;
+	color: #c20a32;
+	text-align: center;
+	border-radius: 10px;
+	padding: 5% 0;
+}
+
+.not-found .page-header {
+	border: 0;
+	margin: 0 0 30px;
+}
+
+.not-found .search-box {
+	float: none;
+	display: block;
+	width: 165px;
+	margin: 15px auto 0;
+	top: 0;
+}
+
+.not-found .search-btn {
+	background-color: #fff;
+}
+
+.not-found .search-btn:before {
+	background-color: #c20a32;
+}
+
+.not-found .search-btn:hover {
+	color: #000;
+}
+
+.search-btn:hover:before {
+	right: 0;
+}
+
+.page-title-404 {
+	font-size: 5em;
+}
+
+.error-404 {
+	background-color: #fff;
+	padding: 50px 0 70px;
+}
+
+.error-404 p {
+	color: #fff;
+	margin: 20px 0 0;
+}
+
+.error-404 a:link,
+.error-404 a:visited {
+	color: #c20a32;
+	text-decoration: none;
+}
+
+.error-404 a:hover,
+.error-404 a:active {
+	color: #599bd5;
+}
+
+/*--------------------------
+9.10 Queries
 --------------------------*/
 
 @media (max-width: 768px) {
