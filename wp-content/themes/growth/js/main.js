@@ -2,7 +2,6 @@ $(document).ready(function() {
   
   // Show & Hide mobile menu navigation
   $(".mobile-btn").click(function() {
-    
     // Add ".mobile-active" class when menu is open
     var mobileBtn = $(".mobile-btn");
     mobileBtn.toggleClass(" mobile-active");
@@ -20,12 +19,6 @@ $(document).ready(function() {
       icon.removeClass("ion-ios-arrow-up"),
       icon.addClass("ion-ios-arrow-down")
     }
-    
   });
-  
-  /*$(".destaques-slider").bxSlider({
-    minSlides: 2,
-    maxSlides: 3,
-  });*/
 
 });

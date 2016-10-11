@@ -28,10 +28,10 @@
 					<h4 class="widget-title">Sobre nós</h4>
 					<img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/growth-blog-footer-logo.png" alt="Growth">
 					<?php get_sidebar("footer"); ?>
-					<a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href="#" target="_blank" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					<a href="#" target="_blank" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href="#" target="_blank" title="Google+"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+					<a href="https://www.facebook.com/growthsupplements" target="_blank" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://www.instagram.com/growthsupplements" target="_blank" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<!-- <a href="#" target="_blank" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="#" target="_blank" title="Google+"><i class="fa fa-google-plus" aria-hidden="true"></i></a> -->
 				</div>
 				<div class="col-sm-8">
 					<h4 class="widget-title">Posts Recentes</h4>
@@ -64,7 +64,7 @@
 												<?php the_title("<h5 class='footer-title'><a href='".get_the_permalink()."' title='".get_the_title()."'>","</a></h5>"); ?>
 												<div class="entry-meta">
 													<?php
-														echo "<p><i class='ion-ios-person'></i>".get_the_author()."</p>";
+														echo "<p><i class='fa fa-user' aria-hidden='true'></i></i>".get_the_author()."</p>";
 														echo "<p><i class='ion-ios-clock'></i>".get_the_date("j F", $post_id)."</p>";
 													?>
 												</div>

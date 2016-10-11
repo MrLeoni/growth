@@ -17,10 +17,16 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<section id="blog">
+				<?php
+					if(!is_paged()):
+						get_template_part( "template-parts/content", "destaques");
+					else:
+						echo "<div class='ghost' style='padding-top: 5px;'></div>";
+					endif;
+				?>
 				<div class="container">
 					<?php
-						if ( have_posts() ) :
-							// get_template_part( "template-parts/content", "destaques"); ?>
+						if ( have_posts() ) : ?>
 							<div class="row">
 								<div class="col-md-9">
 									<div class="row">
@@ -39,9 +45,9 @@ get_header(); ?>
 												<div class="blog-post-tags">
 													<?php the_tags("", " ", ""); ?>
 												</div>
-												<?php	the_title("<h2>", "</h2>"); ?>
+												<?php	the_title("<h2><a href='".get_the_permalink()."' title='".get_the_title()."'>", "</a></h2>"); ?>
 												<div class="highlight-meta">
-													<?php echo "<p><i class='ion-ios-person'></i>".get_the_author()."</p>";
+													<?php echo "<p><i class='fa fa-user' aria-hidden='true'></i>".get_the_author()."</p>";
 													echo "<p><i class='ion-ios-clock'></i>".get_the_date("j F")."</p>"; ?>
 												</div>
 												<?php the_excerpt(); ?>
@@ -53,7 +59,7 @@ get_header(); ?>
 											<div class='col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-6 post-normal'>
 												<a class="blog-post-link" href="<?php the_permalink(); ?>" title="<?php get_the_title(); ?>">
 													<?php the_post_thumbnail("large"); ?>
-													<p><i class="ion-forward"></i></p>
+													<p class="thumb-overlay"><i class="ion-forward"></i></p>
 												</a>
 												<div class="blog-post-tags">
 													<?php	the_tags("", " ", ""); ?>
