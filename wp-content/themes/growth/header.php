@@ -64,7 +64,6 @@
 			</nav>
 			<div class="mobile-btn">
 				<i class="ion-ios-arrow-down"></i>
-				<div class="transition-mobile"></div>
 			</div>
 		</header>
 	

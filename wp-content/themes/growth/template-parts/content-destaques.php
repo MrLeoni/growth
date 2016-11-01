@@ -30,14 +30,23 @@ if($destaque_query->have_posts()): ?>
         <?php the_post_thumbnail("large"); ?>
         
         <div class="destaque-info">
-          <?php // Foreach to display tags related with post
-          foreach($post_tags as $tag) { ?>
-            <p class="destaque-tag"><?php echo $tag->name; ?></p>
-          <?php } // End foreach
+          <?php 
+          
+          // If to check if has any tags      
+          if(has_tag()) :
+            // Foreach to display tags related with post
+            foreach($post_tags as $tag) { ?>
+              <p class="destaque-tag"><?php echo $tag->name; ?></p>
+            <?php } // End foreach
+          else:
+            // Empty
+          endif;
+            
             the_title("<h3>", "</h3>");
             // Meta infos
             echo "<p><i class='fa fa-user' aria-hidden='true'></i></i>".get_the_author()."</p>";
             echo "<p><i class='ion-ios-clock'></i>".get_the_date("j F", $post_id)."</p>";
+            
           ?>
         </div>
         <p class="thumb-gradient"></p>

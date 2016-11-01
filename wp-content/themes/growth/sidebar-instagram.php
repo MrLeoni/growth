@@ -13,5 +13,5 @@ if ( ! is_active_sidebar( 'sidebar-3' ) ) {
 
 <div class="insta-box">
   <?php dynamic_sidebar( 'sidebar-3' ); ?>
-  <a href="#" class="insta-btn" title="/growthsupplements"><img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/instagram-logo.png" alt="Instagram">Siga @growthsupplements</a>
+  <a href="https://www.instagram.com/growthsupplements/" class="insta-btn" title="/growthsupplements"><img src="<?php bloginfo("stylesheet_directory"); ?>/assets/images/logo/instagram-logo.png" alt="Instagram">Siga @growthsupplements</a>
 </div>
